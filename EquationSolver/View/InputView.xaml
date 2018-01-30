@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="EquationSolver.View.InputView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="350"
+             DataContext="{Binding Path=InputViewModel, Source={StaticResource ViewModelLocator}}">
+    <Grid>
+        <Label Content="Solve equation f(x) = 0 inside interval [a, b] for function f(x):" HorizontalAlignment="Left"
+               Height="30" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto" />
+
+        <Label Content="a:" HorizontalAlignment="Left" Height="23" Margin="10,45,0,0" VerticalAlignment="Top"
+               Width="30" />
+        <Label Content="b:" HorizontalAlignment="Left" Height="23" Margin="10,73,0,0" VerticalAlignment="Top"
+               Width="30" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="45,45,0,0" Text="{Binding IntervalStart, UpdateSourceTrigger=LostFocus}"
+                 VerticalAlignment="Top" Width="60" TextAlignment="Right" MaxLines="1" MaxLength="7" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="45,73,0,0" Text="{Binding IntervalEnd, UpdateSourceTrigger=LostFocus}"
+                 VerticalAlignment="Top" Width="60" TextAlignment="Right" MaxLength="7" MaxLines="1" />
+
+        <Label Content="f(x):" HorizontalAlignment="Left" Height="28" Margin="10,101,0,0" VerticalAlignment="Top"
+               Width="30" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="45,101,0,0"
+                 Text="{Binding FunctionText, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="288"
+                 MaxLines="1" />
+
+        <Label Content="Equation:" HorizontalAlignment="Left" Height="28" Margin="10,129,0,0" VerticalAlignment="Top"
+               Width="60" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="45,157,0,0" Text="{Binding EquationText}"
+                 VerticalAlignment="Top" Width="288" MaxLines="1" IsReadOnly="True">
+            <TextBox.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}" />
+            </TextBox.Background>
+        </TextBox>
+
+        <Label Content="Step:" HorizontalAlignment="Left" Margin="119,45,0,0" VerticalAlignment="Top"
+            Width="50" Height="26" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="169,45,0,0" Text="{Binding Step, UpdateSourceTrigger=LostFocus}"
+            VerticalAlignment="Top" Width="60" TextAlignment="Right" MaxLines="1" MaxLength="7" />
+
+        <Label Content="Epsilon:" HorizontalAlignment="Left" Margin="119,73,0,0" VerticalAlignment="Top" Height="26" />
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="169,73,0,0" Text="{Binding Epsilon, UpdateSourceTrigger=LostFocus}"
+            VerticalAlignment="Top" Width="60" TextAlignment="Right" MaxLines="1" MaxLength="7" />
+        <Button Content="Help" Command="{Binding HelpCommand}" HorizontalAlignment="Left" Margin="288,73,0,0" VerticalAlignment="Top" Width="45" Height="23" ToolTip="Show available functions"/>
+
+    </Grid>
+</UserControl>

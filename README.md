@@ -1,7 +1,7 @@
 # Equation Solver
 
-The aim of this project was to create user-friendly C# application but this time it's purpose was to display and find the zero of the function put by the user in terms of *x* on given closed interval and a with fixed error. It's made using MVVM pattern within WPF application and comparing to the SoundOrganizer project is simpler one.
-The most interesting feature of this project is in my opinion the evaluator of user's input which parses any combination of elementary mathematical functions such as trigonometric, cyclometric, hyperbolic etc. with, by default *x* as the variable. Idea behind finding the zero of the function is in my opinion trivial - it's just a linear search with bounded error within points list which is required to draw a function anyway with fixed spacing *dx*.
+The aim of this project was to create user-friendly C# application but this time it's purpose was to display and find the zero of the function put by the user in terms of *x* on given closed interval and a with fixed error *epsilon*. It's made using MVVM pattern within WPF application and comparing to the SoundOrganizer project is simpler one.
+The most interesting feature of this project is in my opinion the evaluator of user's input which parses any combination of elementary mathematical functions such as trigonometric, cyclometric, hyperbolic etc. with, by default *x* as the variable. Idea behind finding the zero of the function is in my opinion trivial - it's just a linear search with bounded error within points list which is required to draw a function anyway with fixed step size *dx*.
 
 
 Example usage of the application:
